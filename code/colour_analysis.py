@@ -50,7 +50,18 @@ SPEED_OF_LIGHT = 3e8  # m/s
 def get_frequency_range(colour):
     return colour_frequency_ranges.get(colour.lower(), None)
 
+# Function: Convert frequency (THz) to wavelength (nm)
+def frequency_to_wavelength(frequency_thz):
+    return round(300000 / frequency_thz, 2)
+
+# Function: Convert wavelength (nm) to frequency (THz)
+def wavelength_to_frequency(wavelength_nm):
+    return round(300000 / wavelength_nm, 2)
+
+
 # Example usage for testing
 if __name__ == "__main__":
     print(get_frequency_range("Green"))
     print(get_frequency_range("Cyan"))
+    print(frequency_to_wavelength(500))          
+    print(wavelength_to_frequency(600))   
