@@ -98,6 +98,10 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Physics-driven calculation needed for interpretation and translation of EM spectrum data.
 
+![Function: Convert frequency to wavelength](screenshots/frequency_to_wavelength_function.png)  
+![Output: Frequency to wavelength conversion](screenshots/frequency_to_wavelength_output.png)  
+*Figure 2: `frequency_to_wavelength()` function and CLI output for 500 THz → 600.0 nm.*
+
 ---
 
 ### 3. `wavelength_to_frequency(wavelength_nm)`
@@ -108,6 +112,10 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Inverse operation of the previous module. Separated to respect the Single Responsibility Principle.
 
+![Function: Convert wavelength to frequency](screenshots/wavelength_to_frequency_function.png)  
+![Output: Wavelength to frequency conversion](screenshots/wavelength_to_frequency_output.png)  
+*Figure 3: wavelength_to_frequency()` function and CLI output for 500 nm → 600.0 THz.*
+
 ---
 
 ### 4. `get_spectrum_range(frequency_thz)`
@@ -117,6 +125,9 @@ This section details how the original colour analysis module was divided into di
 - **Input Method:** Parameter passing
 - **Output Method:** Return value
 - **Justification:** Encapsulates logic for EM classification. Critical for validation and messaging.
+
+![Function: Check spectral range](screenshots/get_spectrum_range_function.png)  
+*Figure 4: `get_spectrum_range()` classification logic.*
 
 ---
 
