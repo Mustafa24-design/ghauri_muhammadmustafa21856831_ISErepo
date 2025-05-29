@@ -16,6 +16,7 @@ In addition, the project performs thorough software testing through the use of b
 
 This assignment produced a working tool while also proving that the student can modularize, review and improve code, test methods systematically and provide needed software documentation—all of which are important in real-life software projects.
 
+---
 
 ## Objectives
 
@@ -29,24 +30,33 @@ The primary objectives of this project are:
 ---
 
 ## Repository Structure:
+Repositories are kept simple and tidy, placing source code, scripts for tests, documentation material and example data into their own folders. This structure ensures maintainability, ease of navigation, and scalability for future enhancements.
 
 ```text
 ISErepo/
 ├── code/
-│   ├── colour_analysis.py              # Main CLI program
-│   ├── frequency.txt                   # Sample input file (single frequency)
-│   ├── frequency_visible.txt           # Visible range frequency (e.g., 600)
-│   ├── frequency_ultraviolet.txt       # UV frequency (e.g., 800)
-│   ├── frequency_edge_visible.txt      # Boundary frequency (e.g., 790)
-│   ├── frequency_outofrange.txt        # Out-of-range frequency (e.g., 31000)
+│   ├── colour_analysis.py              # Main CLI program implementing modular colour analysis
+│   ├── frequency.txt                   # Sample input file with a single frequency value
+│   ├── frequency_visible.txt           # Sample file containing a visible range frequency (e.g., 600 THz)
+│   ├── frequency_ultraviolet.txt       # Sample file with ultraviolet frequency (e.g., 800 THz)
+│   ├── frequency_edge_visible.txt      # File with boundary frequency (e.g., 790 THz)
+│   ├── frequency_outofrange.txt        # File containing an out-of-range frequency (e.g., 31000 THz)
 │
 ├── tests/
-│   └── test_colour_analysis.py         # Unit tests using unittest (EP testing)
+│   └── test_colour_analysis.py         # Unit tests using Python's unittest framework for all modules
 │
-└── README.md                           # Repository overview and usage guide
+├── documents/
+│   └── MuhammadMustafa_21856831_ISEReport.pdf            # PDF version of the final assessment report
+│
+├── screenshots/
+│   └── *.png                           # Screenshots capturing version control logs and test execution
+│
+└── README.md                           # Markdown report documenting the assessment work and outcomes
 ```
+---
 
 ## Key Features
+
 - Converts frequency to wavelength and vice versa.
 - Identifies colours from THz frequency values.
 - Categorizes input into spectral ranges: Visible, Infrared, Ultraviolet.
@@ -57,12 +67,4 @@ ISErepo/
 - Command-line interface with both manual input and file-based operations.
 - Modular programming structure and test-driven development.
 
-## Unit Testing (Version 1)
-Unit testing is implemented using the `unittest` framework with a focus on Equivalence Partitioning (EP). Test cases include:
-- Valid input case: e.g., "green"
-- Invalid input case: e.g., "pink"
-
-To execute the test suite:
-```bash
-python -m unittest discover -s tests
-
+---
