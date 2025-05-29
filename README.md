@@ -30,32 +30,6 @@ The primary objectives of this project are:
 
 ---
 
-## Repository Structure:
-Repositories are kept simple and tidy, placing source code, scripts for tests, documentation material and example data into their own folders. This structure ensures maintainability, ease of navigation, and scalability for future enhancements.
-
-```text
-ISErepo/
-├── code/
-│   ├── colour_analysis.py              # Main CLI program implementing modular colour analysis
-│   ├── frequency.txt                   # Sample input file with a single frequency value
-│   ├── frequency_visible.txt           # Sample file containing a visible range frequency (e.g., 600 THz)
-│   ├── frequency_ultraviolet.txt       # Sample file with ultraviolet frequency (e.g., 800 THz)
-│   ├── frequency_edge_visible.txt      # File with boundary frequency (e.g., 790 THz)
-│   ├── frequency_outofrange.txt        # File containing an out-of-range frequency (e.g., 31000 THz)
-│
-├── tests/
-│   └── test_colour_analysis.py         # Unit tests using Python's unittest framework for all modules
-│
-├── documents/
-│   └── MuhammadMustafa_21856831_ISEReport.pdf            # PDF version of the final assessment report
-│
-├── screenshots/
-│   └── *.png                           # Screenshots capturing version control logs and test execution
-│
-└── README.md                           # Markdown report documenting the assessment work and outcomes
-```
----
-
 ## Key Features
 
 - Converts frequency to wavelength and vice versa.
@@ -451,6 +425,7 @@ All tests executed correctly, validating:
 
 Each unit test passed independently with 0 errors or failures, confirming the robustness and correctness of the modular implementation.
 
+----
 ### How to Run Tests
 
 Run the following command from the root directory:
@@ -459,8 +434,111 @@ Run the following command from the root directory:
 python3 -m unittest discover -s tests
 
 ```
-
+----
 ### Execution Results
 All implemented test cases executed successfully. A summary output screenshot is shown below:
 
 ![Function:Testing](screenshots/Figure27.png)  
+
+----
+
+## Summary of Work (Traceability Matrix)
+
+The table maps each module in the curriculum to testing methods, input and output strategies and types of data. It makes it possible to track the whole process from implementation to testing.
+
+----
+
+| Module Name                | BB (EP) | BB (BVA) | WB  | Data Types       | Input/Output Method     | EP Implemented | BVA Implemented | WB Implemented |
+|----------------------------|:-------:|:--------:|:---:|------------------|--------------------------|----------------|------------------|----------------|
+| `get_frequency_range`      | ✅      | ❌       | ❌  | String           | Keyboard / Return        | ✅              | ❌                | ❌              |
+| `get_stone`                | ✅      | ❌       | ❌  | String           | Keyboard / Return        | ✅              | ❌                | ❌              |
+| `get_music_note`           | ✅      | ❌       | ❌  | String           | Keyboard / Return        | ✅              | ❌                | ❌              |
+| `get_emotion`              | ✅      | ❌       | ❌  | String           | Keyboard / Return        | ✅              | ❌                | ❌              |
+| `get_spectrum_range`       | ✅      | ✅       | ❌  | Integer          | Keyboard / Return        | ✅              | ✅                | ❌              |
+| `frequency_to_colour`      | ❌      | ❌       | ✅  | Integer          | Return                   | ❌              | ❌                | ✅              |
+| `compare_frequencies`      | ❌      | ❌       | ✅  | Integer          | Return                   | ❌              | ❌                | ✅              |
+| `frequency_to_wavelength`  | ✅      | ❌       | ✅  | Integer / Float  | File / Return            | ✅              | ❌                | ✅              |
+| `wavelength_to_frequency`  | ✅      | ❌       | ✅  | Integer / Float  | Keyboard / Return        | ✅              | ❌                | ✅              |
+| `read_frequency_from_file` | ✅      | ❌       | ❌  | Integer          | File Read / Return       | ✅              | ❌                | ❌              |
+
+----
+## Version Control
+
+Git was used to manage the project’s versions which were hosted on GitHub in a publicly available repository.
+
+### Repository Structure:
+Repositories are kept simple and tidy, placing source code, scripts for tests, documentation material and example data into their own folders. This structure ensures maintainability, ease of navigation, and scalability for future enhancements.
+
+```text
+ISErepo/
+├── code/
+│   ├── colour_analysis.py              # Main CLI program implementing modular colour analysis
+│   ├── frequency.txt                   # Sample input file with a single frequency value
+│   ├── frequency_visible.txt           # Sample file containing a visible range frequency (e.g., 600 THz)
+│   ├── frequency_ultraviolet.txt       # Sample file with ultraviolet frequency (e.g., 800 THz)
+│   ├── frequency_edge_visible.txt      # File with boundary frequency (e.g., 790 THz)
+│   ├── frequency_outofrange.txt        # File containing an out-of-range frequency (e.g., 31000 THz)
+│
+├── tests/
+│   └── test_colour_analysis.py         # Unit tests using Python's unittest framework for all modules
+│
+├── documents/
+│   └── MuhammadMustafa_21856831_ISEReport.pdf            # PDF version of the final assessment report
+│
+├── screenshots/
+│   └── *.png                           # Screenshots capturing version control logs and test execution
+│
+└── README.md                           # Markdown report documenting the assessment work and outcomes
+```
+
+---
+
+### GitHub Commit Log Evidence
+
+Below are screenshots taken from the GitHub interface to verify continuous integration and proper version tracking:
+
+**Codebase updates showing staged commits over multiple hours**
+
+![Figure: Commit history overview](screenshots/github1.png)
+
+**Test files upload and refinement history** 
+
+![Figure: File-level commit logs](screenshots/github2.png)
+
+**Overview of README versions demonstrating traceable change** 
+
+![Figure: File-level commit logs](screenshots/github5.png)
+![Figure: File-level commit logs](screenshots/github3.png)
+
+**Full commit timeline reflecting code, test, and report additions** 
+
+![Figure: File-level commit logs](screenshots/github7.png)
+![Figure: File-level commit logs](screenshots/github6.png)
+
+---
+
+### Git Strategy
+
+- **Branch Used**: `main`
+- **Commits Made**: 17+
+- **Approach**: *Incremental development* — commits were made after each significant update (code implementation, test writing, documentation drafting).
+- **Tools Used**: Git CLI and GitHub Web UI
+
+---
+
+### Benefits of Using Version Control
+
+This disciplined version control approach supported:
+
+- Isolating development changes
+- Reverting to stable versions when required
+- Ensuring traceable documentation history
+- Supporting collaborative and modular workflow
+
+## Discussion
+
+Using this project, I have been able to build and document a Python application that analyzes colour based on how frequently each colour is input. By following a structured way of working, I managed to carry out all core objectives: making a CLI tool, using modular design, writing tests and version controlling via GitHub and Git. This project made me more familiar with common software engineering practices such as writing tests, putting related parts into objects and recording the project work’s process and status.
+
+One important problem during the implementation was to make sure the program received thorough input and the user interface remained simple. Considering how to test file-based inputs and simulate different edge cases (e.g., wrong values or frequencies beyond the range) was a necessary task. In addition, capturing evidence by running and testing features individually took a lot of time, still greatly improving the quality assurance process.
+
+This version is restricted by the lack of a graphical or web interface that could simplify its use for users without software skills. From my experience, I’ll add visual graphs and explore publishing the tool as a web application. Increasing robustness in the system and making it easier for users to use the application can be achieved by handling exceptions for each module and adding support for different languages. All things considered, this assignment taught me how to write code meant for production, along with proper documentation, testing and version control, prepared to meet professional software development criteria.
