@@ -4,6 +4,7 @@
 **Student Name:** Muhammad Mustafa Ghauri  
 **Curtin Student ID:** 21856831  
 **Practical Class:** Friday 12:00 PM – 2:00 PM 
+
 **ISE Assignment 2025**
 
 ## Overview:
@@ -232,6 +233,72 @@ The modularization strategy was guided by the following design principles:
 - Edge values (e.g., 400 THz, 790 THz) fall inclusively within the visible range.
 
 This decomposition enables future scalability (e.g., extending to RGB codes, audio outputs, web integration) while maintaining strong internal structure.
+
+---
+
+## Modularity 
+
+This section assesses how the `colour_analysis.py` program follows modular design principles. It explains how to run the program, shows what the program produces using labeled pictures, details the review process of the modular structure and describes any improvements found.
+
+---
+
+### How to Run the Production Code
+
+If you have a Python 3 terminal, navigate to the program’s directory and enter this command:
+
+```bash
+python3 code/colour_analysis.py
+```
+
+Figure 1 to Figure 11 show the application running selected modules in real time:
+
+![Function: Reading Data from Files](screenshots/Figure0.png)  
+
+*Figure 11: Menu and Sample Usage*
+
+---
+
+### Application of Modularity Concepts
+
+The code was developed with attention to widely accepted modularity principles, ensuring readability, testability, and future extensibility:
+
+- **Single Responsibility**: Each function is responsible for one specific task, such as conversion, classification, or mapping.
+
+- **Encapsulation**: Logic is confined within clearly defined functions, without polluting the global namespace.
+
+- **Loose Coupling**: Functions are independent and communicate solely through parameters and return values.
+
+- **Reusability**: Utility functions (e.g., `get_emotion()`, `read_frequency_from_file()`) are generic and can be reused in other projects.
+
+- **Scalability**: The current architecture makes it easy to extend functionality without refactoring existing logic.
+
+---
+
+### Review Checklist and Evaluation Results
+
+Each function was reviewed using a modularity checklist adapted from lecture guidelines. The review results are as follows:
+
+| Review Criteria                         | Status   | Comments                                        |
+|----------------------------------------|----------|-------------------------------------------------|
+| Single Responsibility Principle         | ✅ Pass  | Each function performs a single defined task.   |
+| Clear and consistent naming             | ✅ Pass  | Function and variable names are descriptive.    |
+| Input/Output handling is well-defined   | ✅ Pass  | Uses parameters and return values consistently. |
+| Code duplication avoidance              | ✅ Pass  | No redundant logic detected.                    |
+| Use of local scope and constants        | ✅ Pass  | Global scope limited to constants only.         |
+| Reusability across different contexts   | ✅ Pass  | Functions can be reused in other applications.  |
+| High cohesion within modules            | ✅ Pass  | Code within each function is tightly related.   |
+
+---
+
+### Refactoring Decisions and Improvements
+
+Changes were made according to the review recommendations:
+
+- For every function, clear docstrings and comments were added in the code.
+- Using try-except blocks, I handled the situation when the specified file wasn’t present or accessible.
+- Semantic Constants: Wasting space with magic numbers was cured by replacing them with named constants such as SPEED_OF_LIGHT.
+
+Because the initial design was strong and best practices were followed, the overall function structure did not change.
 
 ---
 
