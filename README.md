@@ -68,3 +68,134 @@ ISErepo/
 - Modular programming structure and test-driven development.
 
 ---
+
+## Module Descriptions
+
+This section details how the original colour analysis module was divided into different tasks. All the modules were made according to the principles of modularity which stress high cohesion, low coupling, reuse, being clear and being tested. The design allows modules to be both used interactively and tested with automated methods.
+
+---
+
+### 1. `get_frequency_range(colour)`
+- **Purpose:** Returns the frequency range (in THz) for a specified visible colour.
+- **Inputs:** `colour` (string)
+- **Outputs:** Tuple of lower and upper frequency bounds (e.g., `(530, 599)`) or `None` if invalid.
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Essential for retrieving frequency ranges for valid colour names. Modular design allows isolation and reuse in multiple contexts, including test automation.
+
+![Screenshot: Get frequency range for a colour](screenshots/Get%20frequency%20range%20for%20a%20colour.png)
+
+*Figure 1: Output showing the frequency range for the colour 'green'.*
+
+---
+
+### 2. `frequency_to_wavelength(frequency_thz)`
+- **Purpose:** Converts frequency (THz) to wavelength (nm) using the formula:  
+  _wavelength (nm) = (3 × 10⁸ m/s) / (frequency × 10¹² Hz)_ → simplified to _300000 / frequency_
+- **Inputs:** `frequency_thz` (float)
+- **Outputs:** Wavelength in nanometres (float)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Physics-driven calculation needed for interpretation and translation of EM spectrum data.
+
+---
+
+### 3. `wavelength_to_frequency(wavelength_nm)`
+- **Purpose:** Converts wavelength (nm) to frequency (THz).
+- **Inputs:** `wavelength_nm` (float)
+- **Outputs:** Frequency in THz (float)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Inverse operation of the previous module. Separated to respect the Single Responsibility Principle.
+
+---
+
+### 4. `get_spectrum_range(frequency_thz)`
+- **Purpose:** Categorizes the input frequency into spectral ranges: `Infrared`, `Visible`, `Ultraviolet`, or `Out of Range`.
+- **Inputs:** `frequency_thz` (float)
+- **Outputs:** Category name (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Encapsulates logic for EM classification. Critical for validation and messaging.
+
+---
+
+### 5. `frequency_to_colour(frequency_thz)`
+- **Purpose:** Maps a given frequency to its associated colour name if within the visible range. If outside, returns a contextual message.
+- **Inputs:** `frequency_thz` (float)
+- **Outputs:** Colour name or category message (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Central module of the application. Supports both analytical and user-facing functionality.
+
+---
+
+### 6. `compare_frequencies(freq1, freq2)`
+- **Purpose:** Compares two frequencies and determines if they map to the same colour, different colours, or are outside the visible range.
+- **Inputs:** `freq1`, `freq2` (float)
+- **Outputs:** Human-readable comparison message (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Provides comparative analysis logic, improving UX by handling edge and invalid cases robustly.
+
+---
+
+### 7. `get_stone(colour)`
+- **Purpose:** Returns the gemstone linked to a valid colour.
+- **Inputs:** `colour` (string)
+- **Outputs:** Gemstone (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Implements factual mapping (from Figure 2) while supporting fun/educational use cases.
+
+---
+
+### 8. `get_music_note(colour)`
+- **Purpose:** Returns the musical note associated with a colour.
+- **Inputs:** `colour` (string)
+- **Outputs:** Note (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Analogous to `get_stone()`, enriches the application with cross-disciplinary insight.
+
+---
+
+### 9. `get_emotion(colour)`
+- **Purpose:** Returns the emotion associated with a given colour.
+- **Inputs:** `colour` (string)
+- **Outputs:** Emotion (string)
+- **Input Method:** Parameter passing
+- **Output Method:** Return value
+- **Justification:** Provides emotional context, enhancing the user experience through psychological dimensions.
+
+---
+
+### 10. `read_frequency_from_file(filename)`
+- **Purpose:** Reads a frequency value from the first line of a given text file.
+- **Inputs:** `filename` (string)
+- **Outputs:** Frequency (integer)
+- **Input Method:** File input
+- **Output Method:** Return value
+- **Justification:** Enables file-based input testing and automation. Especially useful for batch processing.
+
+---
+
+## Design Decisions and Assumptions
+
+The modularization strategy was guided by the following design principles:
+
+- **Single Responsibility Principle:** Each function handles a narrowly defined task.
+- **Loose Coupling:** Minimal interdependencies between modules allow for isolated testing.
+- **High Cohesion:** Modules focus exclusively on one conceptual task (e.g., conversion, lookup, classification).
+- **Testability:** Functions are parameter-driven, facilitating clean unit tests without the need for mocking global state.
+
+**Assumptions Made:**
+- Only colour names listed in Figures 1 and 2 are considered valid.
+- Frequency values are restricted to the range 1–40,000 THz, as per the assignment brief.
+- File-based inputs will always contain an integer on the first line and be accessible at runtime.
+- Edge values (e.g., 400 THz, 790 THz) fall inclusively within the visible range.
+
+This decomposition enables future scalability (e.g., extending to RGB codes, audio outputs, web integration) while maintaining strong internal structure.
+
+---
+
