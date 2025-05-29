@@ -301,4 +301,166 @@ Changes were made according to the review recommendations:
 Because the initial design was strong and best practices were followed, the overall function structure did not change.
 
 ---
+## Test Execution 
 
+This section presents the results of each individual unit test executed using the unittest framework. Screenshots validate that each function behaves as expected. Tests are grouped by category: black-box, white-box, utility, file-based, and custom student ID validation.
+
+
+### Black-box Test Cases
+
+Black-box testing was performed using **Equivalence Partitioning (EP)** and **Boundary Value Analysis (BVA)** techniques. These methods were applied to validate module behavior under both expected and unexpected input conditions.
+
+---
+
+#### Assumptions Made
+
+- Only the colour names defined in the application are considered valid.
+- Inputs are assumed to be correctly typed (i.e., strings for colour names, floats/integers for frequencies).
+- File-based inputs contain one frequency per file (first line only is used).
+
+---
+
+#### Equivalence Partitioning (EP) Test Cases
+
+| Test Case ID | Function Tested          | Input        | Expected Output             | Valid Partition | Comments                       |
+|--------------|--------------------------|--------------|-----------------------------|-----------------|--------------------------------|
+| EP01         | `get_frequency_range`    | "green"      | (530, 599)                  | Yes             | Valid colour                   |
+| EP02         | `get_frequency_range`    | "pink"       | None                        | No              | Invalid colour                 |
+| EP03         | `get_stone`              | "cyan"       | "Turquoise"                 | Yes             | Valid mapping                  |
+| EP04         | `get_stone`              | "black"      | "Invalid colour"            | No              | Not in dataset                 |
+| EP05         | `get_music_note`         | "red"        | "C"                         | Yes             | Valid note                     |
+| EP06         | `get_music_note`         | "brown"      | "Invalid colour"            | No              | Invalid input                  |
+| EP07         | `get_emotion`            | "orange"     | "Happy"                     | Yes             | Valid mapping                  |
+| EP08         | `get_emotion`            | "silver"     | "Invalid colour"            | No              | Not mapped                     |
+
+---
+**EP01: test_get_frequency_range_valid**
+
+![Function:EP01](screenshots/Figure11.png)  
+
+**EP02: test_get_frequency_range_invalid**
+
+![Function:EP02](screenshots/Figure12.png)  
+
+**EP03 and 04: test_get_stone**
+
+![Function:EP0304](screenshots/Figure13.png)  
+
+**EP05 and 06: test_get_music_note**
+
+![Function:EP0506](screenshots/Figure14.png)  
+
+**EP07 and 08: test_get_emotion**
+
+![Function:EP0708](screenshots/Figure15.png)  
+
+### Boundary Value Analysis (BVA) Test Cases
+
+| Test Case ID | Function Tested          | Input (THz) | Expected Output     | Boundary Type       |
+|--------------|--------------------------|-------------|---------------------|----------------------|
+| BVA01        | `get_spectrum_range`     | 400         | "Visible"           | Lower bound visible |
+| BVA02        | `get_spectrum_range`     | 790         | "Visible"           | Upper bound visible |
+| BVA03        | `get_spectrum_range`     | 399         | "Infrared"          | Just below visible  |
+| BVA04        | `get_spectrum_range`     | 791         | "Ultraviolet"       | Just above visible  |
+| BVA05        | `get_spectrum_range`     | 0           | "Out of Range"      | Below valid range   |
+| BVA06        | `get_spectrum_range`     | 45000       | "Out of Range"      | Above valid range   |
+
+---
+**test_get_spectrum_range_boundaries**
+
+![Function:BVA](screenshots/Figure16.png)  
+
+----
+
+## White-box Test Cases
+
+White-box testing was applied to validate internal logic and decision-making within functions using **path coverage** and **conditional logic testing**.
+
+---
+
+### Selected Modules and Path-Based Test Cases
+
+| Test Case ID | Function Tested             | Input(s)           | Expected Output                    | Path Type         |
+|--------------|-----------------------------|--------------------|------------------------------------|-------------------|
+| WB01         | `frequency_to_colour`       | 600                | "cyan"                             | Loop + if-else    |
+| WB02         | `frequency_to_colour`       | 850                | "Above Violet (Ultraviolet)"       | Out-of-range path |
+| WB03         | `frequency_to_colour`       | 350                | "Below Red (Infrared)"             | Out-of-range path |
+| WB04         | `compare_frequencies`       | 670, 680           | Contains \"same colour\"            | Same condition    |
+| WB05         | `compare_frequencies`       | 420, 650           | Contains \"different colours\"       | Different branch  |
+| WB06         | `compare_frequencies`       | 200, 850           | Contains \"outside the visible\"     | Mixed visibility  |
+
+These test cases cover key branches in control structures and ensure that all logical paths are exercised.
+
+----
+**test_frequency_to_colour_visible**
+
+![Function:WB01](screenshots/Figure17.png)  
+
+----
+
+**test_frequency_to_colour_outside_range**
+
+![Function:WB0203](screenshots/Figure18.png)  
+
+----
+**test_compare_same_colour**
+
+![Function:WB04](screenshots/Figure19.png)  
+
+----
+
+**test_compare_different_colours**
+
+![Function:WB05](screenshots/Figure20.png)  
+
+----
+
+**test_compare_with_nonvisible**
+
+![Function:WB06](screenshots/Figure21.png)  
+
+---
+
+## Test Implementation and Execution
+
+The test suite was implemented in the `tests/test_colour_analysis.py` file using Python’s built-in `unittest` framework. All tests target functions from the `colour_analysis.py` module.
+
+---
+![Function:WB06](screenshots/Figure22.png)  
+
+---
+![Function:WB06](screenshots/Figure23.png)  
+
+---
+![Function:WB06](screenshots/Figure24.png)  
+
+---
+![Function:WB06](screenshots/Figure25.png)  
+
+---
+![Function:WB06](screenshots/Figure26.png)  
+
+---
+
+All tests executed correctly, validating:
+
+- Core logic for spectrum conversion.
+- File I/O handling and edge-case reading.
+- Correct classification of colours and frequency ranges.
+- Compliance with assignment-specific constraints.
+
+Each unit test passed independently with 0 errors or failures, confirming the robustness and correctness of the modular implementation.
+
+### How to Run Tests
+
+Run the following command from the root directory:
+
+```bash
+python3 -m unittest discover -s tests
+
+```
+
+### Execution Results
+All implemented test cases executed successfully. A summary output screenshot is shown below:
+
+![Function:Testing](screenshots/Figure27.png)  
