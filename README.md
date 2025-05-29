@@ -17,6 +17,17 @@ In addition, the project performs thorough software testing through the use of b
 This assignment produced a working tool while also proving that the student can modularize, review and improve code, test methods systematically and provide needed software documentation—all of which are important in real-life software projects.
 
 
+## Objectives
+
+The primary objectives of this project are:
+
+- **To design and develop a modular software solution** that adheres to sound principles of software engineering, using clearly defined and reusable functions.
+- **To validate the correctness of the code** using structured black-box and white-box testing techniques, ensuring accurate handling of both valid and invalid inputs.
+- **To document and manage the development lifecycle** using a version control system (Git) that maintains a traceable history of all changes made across the codebase and associated documents.
+- **To generate a detailed markdown report** that outlines the development process, design decisions, testing strategies, and version control insights for the purpose of knowledge transfer and reproducibility.
+
+---
+
 ## Repository Structure:
 
 ```text
