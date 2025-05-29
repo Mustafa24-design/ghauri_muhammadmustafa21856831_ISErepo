@@ -8,21 +8,21 @@ This project implements a modular Python application for analysing electromagnet
 
 ## Repository Structure:
 
+```text
 ISErepo/
 ├── code/
-│ ├── colour_analysis.py # Main CLI program
-│ ├── frequency.txt # Sample input file (single frequency)
-│ ├── frequency_visible.txt # Visible range frequency (e.g., 600)
-│ ├── frequency_ultraviolet.txt # UV frequency (e.g., 800)
-│ ├── frequency_edge_visible.txt # Boundary frequency (e.g., 790)
-│ ├── frequency_outofrange.txt # Out-of-range frequency (e.g., 31000)
+│   ├── colour_analysis.py              # Main CLI program
+│   ├── frequency.txt                   # Sample input file (single frequency)
+│   ├── frequency_visible.txt           # Visible range frequency (e.g., 600)
+│   ├── frequency_ultraviolet.txt       # UV frequency (e.g., 800)
+│   ├── frequency_edge_visible.txt      # Boundary frequency (e.g., 790)
+│   ├── frequency_outofrange.txt        # Out-of-range frequency (e.g., 31000)
 │
 ├── tests/
-│ └── test_colour_analysis.py # Unit tests using unittest (EP testing)
+│   └── test_colour_analysis.py         # Unit tests using unittest (EP testing)
 │
-└── README.md # Repository overview and usage guide
-
-
+└── README.md                           # Repository overview and usage guide
+```
 
 ## Key Features
 - Converts frequency to wavelength and vice versa.
