@@ -501,15 +501,20 @@ Below are screenshots taken from the GitHub interface to verify continuous integ
 
 ![Figure: Commit history overview](screenshots/github1.png)
 
+---
 **Test files upload and refinement history** 
 
 ![Figure: File-level commit logs](screenshots/github2.png)
 
+---
 **Overview of README versions demonstrating traceable change** 
 
 ![Figure: File-level commit logs](screenshots/github5.png)
+
+---
 ![Figure: File-level commit logs](screenshots/github3.png)
 
+---
 **Full commit timeline reflecting code, test, and report additions** 
 
 ![Figure: File-level commit logs](screenshots/github7.png)
@@ -535,6 +540,7 @@ This disciplined version control approach supported:
 - Ensuring traceable documentation history
 - Supporting collaborative and modular workflow
 
+---
 ## Discussion
 
 Using this project, I have been able to build and document a Python application that analyzes colour based on how frequently each colour is input. By following a structured way of working, I managed to carry out all core objectives: making a CLI tool, using modular design, writing tests and version controlling via GitHub and Git. This project made me more familiar with common software engineering practices such as writing tests, putting related parts into objects and recording the project work’s process and status.
@@ -542,3 +548,5 @@ Using this project, I have been able to build and document a Python application 
 One important problem during the implementation was to make sure the program received thorough input and the user interface remained simple. Considering how to test file-based inputs and simulate different edge cases (e.g., wrong values or frequencies beyond the range) was a necessary task. In addition, capturing evidence by running and testing features individually took a lot of time, still greatly improving the quality assurance process.
 
 This version is restricted by the lack of a graphical or web interface that could simplify its use for users without software skills. From my experience, I’ll add visual graphs and explore publishing the tool as a web application. Increasing robustness in the system and making it easier for users to use the application can be achieved by handling exceptions for each module and adding support for different languages. All things considered, this assignment taught me how to write code meant for production, along with proper documentation, testing and version control, prepared to meet professional software development criteria.
+
+---
