@@ -58,6 +58,27 @@ def frequency_to_wavelength(frequency_thz):
 def wavelength_to_frequency(wavelength_nm):
     return round(300000 / wavelength_nm, 2)
 
+# Function: Check spectral range of frequency
+def get_spectrum_range(frequency_thz):
+    if 400 <= frequency_thz <= 790:
+        return "Visible"
+    elif 791 <= frequency_thz <= 30000:
+        return "Ultraviolet"
+    elif 1 <= frequency_thz <= 399:
+        return "Infrared"
+    else:
+        return "Out of Range"
+
+# Function: Determine colour by frequency
+def frequency_to_colour(frequency_thz):
+    for colour, (low, high) in colour_frequency_ranges.items():
+        if low <= frequency_thz <= high:
+            return colour
+    if frequency_thz < 400:
+        return "Below Red (Infrared)"
+    elif frequency_thz > 790:
+        return "Above Violet (Ultraviolet)"
+    return "Unknown"
 
 # Example usage for testing
 if __name__ == "__main__":
@@ -65,3 +86,7 @@ if __name__ == "__main__":
     print(get_frequency_range("Cyan"))
     print(frequency_to_wavelength(500))          
     print(wavelength_to_frequency(600))   
+    print(get_spectrum_range(830))  
+    print(get_spectrum_range(630))              
+    print(frequency_to_colour(710))  
+    print(frequency_to_colour(510))             
