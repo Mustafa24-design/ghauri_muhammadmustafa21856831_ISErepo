@@ -98,9 +98,8 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Physics-driven calculation needed for interpretation and translation of EM spectrum data.
 
-![Function: Frequency to Wavelength](screenshots/figure2.png) 
+![Function: Frequency to Wavelength](screenshots/Figure2.png) 
 
-![Output: Frequency to wavelength conversion](screenshots/frequency_to_wavelength_output.png)  
 *Figure 2: `frequency_to_wavelength()` function and CLI output for 500 THz → 600.0 nm.*
 
 ---
@@ -113,8 +112,8 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Inverse operation of the previous module. Separated to respect the Single Responsibility Principle.
 
-![Function: Convert wavelength to frequency](screenshots/wavelength_to_frequency_function.png)  
-![Output: Wavelength to frequency conversion](screenshots/wavelength_to_frequency_output.png)  
+![Function: Convert wavelength to frequency](screenshots/Figure3.png)  
+
 *Figure 3: wavelength_to_frequency()` function and CLI output for 500 nm → 600.0 THz.*
 
 ---
@@ -127,7 +126,8 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Encapsulates logic for EM classification. Critical for validation and messaging.
 
-![Function: Check spectral range](screenshots/get_spectrum_range_function.png)  
+![Function: Check spectral range](screenshots/Figure4.png)  
+
 *Figure 4: `get_spectrum_range()` classification logic.*
 
 ---
@@ -139,6 +139,10 @@ This section details how the original colour analysis module was divided into di
 - **Input Method:** Parameter passing
 - **Output Method:** Return value
 - **Justification:** Central module of the application. Supports both analytical and user-facing functionality.
+- 
+![Function: Conversion of Frequency to Colour](screenshots/Figure5.png)  
+
+*Figure 5: Function and Output: Conversion of Frequency to Colour*
 
 ---
 
@@ -150,6 +154,10 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Provides comparative analysis logic, improving UX by handling edge and invalid cases robustly.
 
+![Function: Comparing two Frequencies](screenshots/Figure6.png)  
+
+*Figure 6: Function and Output: Comparing two Frequencies*
+
 ---
 
 ### 7. `get_stone(colour)`
@@ -159,6 +167,10 @@ This section details how the original colour analysis module was divided into di
 - **Input Method:** Parameter passing
 - **Output Method:** Return value
 - **Justification:** Implements factual mapping (from Figure 2) while supporting fun/educational use cases.
+
+![Function: Get Stone Associated with a Colour](screenshots/Figure7.png)  
+
+*Figure 7: Function and Output: Get Stone Associated with a Colour*
 
 ---
 
@@ -170,6 +182,10 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Analogous to `get_stone()`, enriches the application with cross-disciplinary insight.
 
+![Function: Get Music Note Associated with a Colour](screenshots/Figure8.png)  
+
+*Figure 8: Function and Output: Get Music Note Associated with a Colour*
+
 ---
 
 ### 9. `get_emotion(colour)`
@@ -180,6 +196,10 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Provides emotional context, enhancing the user experience through psychological dimensions.
 
+![Function: Get Emotion Associated with a Colour](screenshots/Figure9.png)  
+
+*Figure 9: Function and Output: Get Emotion Associated with a Colour*
+
 ---
 
 ### 10. `read_frequency_from_file(filename)`
@@ -189,6 +209,10 @@ This section details how the original colour analysis module was divided into di
 - **Input Method:** File input
 - **Output Method:** Return value
 - **Justification:** Enables file-based input testing and automation. Especially useful for batch processing.
+
+![Function: Reading Data from Files](screenshots/Figure10.png)  
+
+*Figure 10: Function and Output: Example of Reading Data from Files*
 
 ---
 
