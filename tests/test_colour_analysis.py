@@ -115,9 +115,9 @@ class TestColourAnalysis(unittest.TestCase):
     # -----------------------
 
     def test_student_identifier_data(self):
-        # Assume last name: Mustafa, ID ends in 831
-        self.assertEqual(get_emotion("Mustafa"), "Invalid colour")  # last name
-        self.assertEqual(get_spectrum_range(831), "Ultraviolet")  # student ID digits
+        # Assume last name: Zahra, ID ends in 870
+        self.assertEqual(get_emotion("zahra"), "Invalid colour")  # last name
+        self.assertEqual(get_spectrum_range(870), "Ultraviolet")  # student ID digits
 
 if __name__ == "__main__":
     unittest.main()
