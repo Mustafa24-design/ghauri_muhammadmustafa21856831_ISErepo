@@ -98,7 +98,7 @@ This section details how the original colour analysis module was divided into di
 - **Output Method:** Return value
 - **Justification:** Physics-driven calculation needed for interpretation and translation of EM spectrum data.
 
-![Function: Convert frequency to wavelength](screenshots/frequency_to_wavelength_function.png)  
+![Function: Convert frequency to wavelength](screenshots/Get%20figure2.png)  
 ![Output: Frequency to wavelength conversion](screenshots/frequency_to_wavelength_output.png)  
 *Figure 2: `frequency_to_wavelength()` function and CLI output for 500 THz → 600.0 nm.*
 
