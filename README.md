@@ -483,7 +483,7 @@ ISErepo/
 │   └── test_colour_analysis.py         # Unit tests using Python's unittest framework for all modules
 │
 ├── documents/
-│   └── MuhammadMustafa_21856831_ISEReport.pdf            # PDF version of the final assessment report
+│   └── MuhammadMustafaGhauri_21856831_ISEReport.pdf            # PDF version of the final assessment report
 │
 ├── screenshots/
 │   └── *.png                           # Screenshots capturing version control logs and test execution
