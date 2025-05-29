@@ -106,6 +106,12 @@ def get_emotion(colour):
 
 def display_valid_colours():
     print("Valid colours: violet, blue, cyan, green, yellow, orange, red")
+    
+def read_frequency_from_file(filename):
+    """Reads a frequency value from a text file (first line only)."""
+    with open(filename, 'r') as file:
+        return int(file.readline().strip())
+
 
 def main():
     while True:
@@ -119,6 +125,7 @@ def main():
         print("7. Get gemstone for a colour")
         print("8. Get musical note for a colour")
         print("9. Get emotion associated with a colour")
+        print("10. Load frequency from file and determine colour")
         print("0. Exit")
 
         choice = input("Enter your choice: ")
@@ -163,6 +170,16 @@ def main():
             display_valid_colours()
             colour = input("Enter colour name: ").strip().lower()
             print("Emotion:", get_emotion(colour))
+            
+
+        elif choice == "10":
+            filename = input("Enter filename: ")
+            try:
+                freq = read_frequency_from_file(filename)
+                print("Frequency read:", freq)
+                print("Associated colour:", frequency_to_colour(freq))
+            except Exception as e:
+                print("Error reading file:", e)
 
         elif choice == "0":
             print("Exiting... Goodbye!")
