@@ -470,7 +470,7 @@ Git was used to manage the project’s versions which were hosted on GitHub in a
 Repositories are kept simple and tidy, placing source code, scripts for tests, documentation material and example data into their own folders. This structure ensures maintainability, ease of navigation, and scalability for future enhancements.
 
 ```text
-ISErepo/
+ghauri_muhammadmustafa21856831_ISErepo/
 ├── code/
 │   ├── colour_analysis.py              # Main CLI program implementing modular colour analysis
 │   ├── frequency.txt                   # Sample input file with a single frequency value
